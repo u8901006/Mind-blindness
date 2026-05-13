@@ -1,0 +1,8 @@
+{
+  "name": "mind-blindness-report",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  }
+}
