@@ -229,9 +229,10 @@ function generateEmptyReport(dateStr) {
 
 function generateHtml(report, dateStr) {
   const weekdayNames = ["日", "一", "二", "三", "四", "五", "六"];
-  const d = new Date(dateStr + "T00:00:00+08:00");
+  const [year, month, day] = dateStr.split("-").map(Number);
+  const d = new Date(year, month - 1, day);
   const weekday = weekdayNames[d.getDay()];
-  const dateDisplay = `${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日（週${weekday}）`;
+  const dateDisplay = `${year} 年 ${month} 月 ${day} 日（週${weekday}）`;
 
   const overview = escapeHtml(report.summary?.overview || "");
   const highlights = (report.summary?.highlights || []).map((h) => escapeHtml(h));
