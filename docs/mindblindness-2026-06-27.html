@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="心盲症與心智盲區每日研究簡報 2026 年 6 月 27 日（週六）">
+<meta name="author" content="Mind Blindness Research Bot">
+<title>心盲症與心智盲區研究日報｜2026 年 6 月 27 日（週六）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f6f1e8;
+  --surface: #fffaf2;
+  --line: #d8c5ab;
+  --text: #2b2118;
+  --muted: #766453;
+  --accent: #8c4f2b;
+  --accent-soft: #ead2bf;
+  --card-bg: color-mix(in srgb, var(--surface) 92%, white);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+  min-height: 100vh;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 880px; margin: 0 auto; padding: 40px 20px 60px; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.page-header {
+  text-align: center;
+  margin-bottom: 48px;
+  animation: fadeDown 0.6s ease-out;
+}
+.page-header h1 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 6px;
+  letter-spacing: 0.03em;
+}
+.page-header .subtitle {
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+.page-header .date-badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 20px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.88rem;
+}
+.section { margin-bottom: 44px; animation: fadeUp 0.6s ease-out both; }
+.section:nth-child(2) { animation-delay: 0.08s; }
+.section:nth-child(3) { animation-delay: 0.16s; }
+.section:nth-child(4) { animation-delay: 0.24s; }
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent-soft);
+}
+.overview-box {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 20px 60px rgba(61,36,15,0.06);
+  margin-bottom: 20px;
+  font-size: 0.96rem;
+  line-height: 1.9;
+}
+.highlight-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+.highlight-list li {
+  padding: 8px 0 8px 24px;
+  position: relative;
+  font-size: 0.93rem;
+}
+.highlight-list li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.7rem;
+  top: 12px;
+}
+.trend-box {
+  background: linear-gradient(135deg, var(--accent-soft) 0, #f5e6d5 100%);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-top: 16px;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.trend-box strong { color: var(--accent); }
+.card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 28px 32px;
+  box-shadow: 0 8px 30px rgba(61,36,15,0.04);
+  margin-bottom: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(61,36,15,0.08);
+}
+.card-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 12px; }
+.rank-badge {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.card-title-group { flex: 1; }
+.card-title-zh {
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 2px;
+}
+.card-title-en {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.4;
+}
+.card-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.tag {
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+.relevance-badge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+.relevance-high { background: #d4e8c2; color: #5a7a3a; }
+.relevance-medium { background: #f5e6c8; color: #9f7a2e; }
+.relevance-low { background: #e8e2da; color: var(--muted); }
+.card-summary { font-size: 0.92rem; line-height: 1.8; margin-bottom: 12px; }
+.clinical-box {
+  background: #fdf0e2;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+.clinical-box strong { color: var(--accent); }
+.pico-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.pico-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.84rem;
+}
+.pico-label {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+.pico-text { color: var(--muted); line-height: 1.5; }
+.card-footer { text-align: right; }
+.card-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.card-link:hover { text-decoration: underline; }
+.topic-dist-box {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 24px 28px;
+  box-shadow: 0 8px 30px rgba(61,36,15,0.04);
+}
+.topic-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.topic-bar-label {
+  width: 100px;
+  font-size: 0.82rem;
+  color: var(--text);
+  text-align: right;
+  flex-shrink: 0;
+}
+.topic-bar-track {
+  flex: 1;
+  height: 18px;
+  background: #ede4d6;
+  border-radius: 9px;
+  overflow: hidden;
+}
+.topic-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #c47a4a);
+  border-radius: 9px;
+  transition: width 0.6s ease;
+}
+.topic-bar-count {
+  width: 28px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.keyword-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.keyword-badge {
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: #ede4d6;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+.paper-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+.paper-row {
+  background: var(--surface);
+  border-radius: 14px;
+}
+.paper-row td {
+  padding: 14px 16px;
+  font-size: 0.88rem;
+  vertical-align: top;
+}
+.paper-row td:first-child { border-radius: 14px 0 0 14px; }
+.paper-row td:last-child { border-radius: 0 14px 14px 0; }
+.paper-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.4;
+  display: block;
+}
+.paper-link:hover { text-decoration: underline; }
+.paper-meta-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.mini-tag {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+.paper-summary-cell { color: var(--muted); line-height: 1.6; max-width: 320px; }
+.paper-rel-cell { text-align: center; width: 48px; }
+.page-footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 12px;
+}
+.footer-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.footer-links a:hover { text-decoration: underline; }
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  animation: fadeDown 0.4s ease-out;
+}
+.back-link:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .container { padding: 20px 14px 40px; }
+  .pico-grid { grid-template-columns: 1fr; }
+  .card { padding: 20px 18px; }
+  .overview-box { padding: 20px; }
+  .topic-bar-label { width: 70px; font-size: 0.75rem; }
+  .page-header h1 { font-size: 1.3rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="index.html" class="back-link">← 回到日報列表</a>
+
+  <header class="page-header">
+    <h1>心盲症與心智盲區研究日報</h1>
+    <p class="subtitle">Aphantasia &amp; Mind Blindness Daily Research Briefing</p>
+    <span class="date-badge">2026 年 6 月 27 日（週六）</span>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title">今日研究概覽</h2>
+    <div class="overview-box">
+      <p>今日篩選出 9 篇具高學術價值的 aphantasia （心盲症）相關文獻。整體研究顯示，該領域正從過去單純的「視覺意象缺失」現象描述，精細化地深入至特定認知模組的解構。最新發現指出，心盲症不僅影響自傳式記憶與視覺意象，更獨立損害臉孔知覺與臉孔記憶，並在複雜虛擬環境中導致空間導航困難。此外，跨領域研究開始探討心盲症與自閉症之間的潛在交集，以及透過大樣本釐清 anauralia （無心耳症）與 aphantasia 的分類學差異。同時，哲學與現象學視角的介入，挑戰了傳統以意象為基礎的抽象認知理論，為意識本質的研究提供了新的反證。（註：系統收集之其餘 20 篇文獻因屬未來預設日期、無標題佔位符或完全無關之工程與藝術領域，已由學者判定為雜訊資料並予以排除。）</p>
+      <ul class="highlight-list"><li>亮點1：心盲症個體在臉孔辨識上展現「知覺」與「記憶」的雙重獨立受損，但即時的臉孔比對能力則完好保留，顯示其視覺處理架構的特定斷裂。</li><li>亮點2：在複雜虛擬環境的測試中，心盲症與空間記憶及導航障礙產生顯著關聯，挑戰了過去認為心盲症僅影響「視覺」層面的觀點。</li><li>亮點3：自閉症與心盲症的共病率與表徵重疊受到正式實證檢視，為發展心理學與精神醫學的跨診斷分類提供新線索。</li></ul>
+      <div class="trend-box"><strong>趨勢觀察：</strong>研究趨勢觀察：近期的 aphantasia 研究呈現「雙軌發展」：一方面是認知神經科學的「向下微觀化」，利用虛擬實境與神經心理測驗精確定位受損的認知模組（如空間導航、臉孔記憶、運動意象）；另一方面是「向外擴張化」，探討多模態意象缺失（如 anauralia ）、與其他神經發展障礙（如自閉症）的關聯，以及結合現象學與哲學來重新定義「想像」在人類認知中的必要性地位。</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">精選文獻（Top Picks）</h2>
+    
+    <article class="card pick-card" data-pmid="10.1016/j.cortex.2026.06.002">
+      <div class="card-header">
+        <span class="rank-badge">#1</span>
+        <div class="card-title-group">
+          <h3 class="card-title-zh">心盲症個體在臉孔知覺與臉孔記憶上表現出獨立損害，但在臉孔比對上則否</h3>
+          <p class="card-title-en">Individuals with aphantasia show independent impairments in face perception and face memory, but not face matching</p>
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="meta-journal">Cortex</span>
+        <span class="meta-date">2026-09</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">臉孔辨識</span><span class="tag">認知神經科學</span>
+        <span class="relevance-badge relevance-high">★ 高相關</span>
+      </div>
+      <p class="card-summary">本研究探討 aphantasia 是否影響臉孔處理。結果顯示，心盲症個體在臉孔知覺與長期臉孔記憶兩項任務中表現顯著低於對照組，且這兩種損害是相互獨立的。然而，在涉及知覺層級的即時臉孔比對任務中，其表現則與常人無異。這表明心盲症對臉孔處理的影響並非全面性的視覺缺陷，而是特定選擇性地損害了依賴心理意象重現的記憶提取與精細知覺編碼機制。</p>
+      <div class="clinical-box"><strong>臨床意涵：</strong>有助於臨床鑑別診斷，區分心盲症導致的臉孔記憶困難與典型發展性 prosopagnosia （臉孔失認症），避免誤判。</div>
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">經篩選確認之心盲症個體</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">臉孔知覺、臉孔記憶與臉孔比對之神經心理學測驗組</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">具有正常視覺意象能力之健康對照組</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">心盲症組在臉孔知覺與記憶測驗得分顯著較低，但臉孔比對得分無顯著差異</span></div>
+      </div>
+      <div class="card-footer">
+        <a href="https://doi.org/10.1016/j.cortex.2026.06.002" target="_blank" rel="noopener" class="card-link">查看原文 →</a>
+      </div>
+    </article>
+    <article class="card pick-card" data-pmid="10.1016/j.neuropsychologia.2026.109517">
+      <div class="card-header">
+        <span class="rank-badge">#2</span>
+        <div class="card-title-group">
+          <h3 class="card-title-zh">心盲症與複雜虛擬環境中的空間記憶及導航困難相關</h3>
+          <p class="card-title-en">Aphantasia is associated with spatial memory and navigation difficulties in complex virtual environments</p>
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="meta-journal">Neuropsychologia</span>
+        <span class="meta-date">2026-09</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">認知神經科學</span><span class="tag">心理意象</span>
+        <span class="relevance-badge relevance-high">★ 高相關</span>
+      </div>
+      <p class="card-summary">本研究利用複雜虛擬環境探討 aphantasia 對空間認知的影響。受試者需在虛擬迷宮中進行導航與空間記憶測試。研究發現，心盲症個體在路徑學習、路線回溯及空間指標建立等任務上，表現顯著落後於對照組。此發現支持了視覺意象在認知地圖建構中扮演關鍵角色的假說，證實心盲症的認知影響層面從靜態意象擴展至動態的空間導航機能。</p>
+      <div class="clinical-box"><strong>臨床意涵：</strong>對於心盲症個體的日常生活適應與職能治療提供依據，建議在需要空間導航的環境中提供額外的非視覺化輔助線索。</div>
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">心盲症受試者與健康對照者</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">複雜虛擬實境導航與空間記憶測驗任務</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">組間表現比較</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">心盲症組在空間記憶與導航任務中的錯誤率顯著較高，完成時間較長</span></div>
+      </div>
+      <div class="card-footer">
+        <a href="https://doi.org/10.1016/j.neuropsychologia.2026.109517" target="_blank" rel="noopener" class="card-link">查看原文 →</a>
+      </div>
+    </article>
+    <article class="card pick-card" data-pmid="10.1016/j.concog.2026.104085">
+      <div class="card-header">
+        <span class="rank-badge">#3</span>
+        <div class="card-title-group">
+          <h3 class="card-title-zh">自閉症與心盲症</h3>
+          <p class="card-title-en">Autism and Aphantasia</p>
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="meta-journal">Consciousness and Cognition</span>
+        <span class="meta-date">2026-08</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">自閉症</span><span class="tag">發展心理學</span><span class="tag">精神醫學</span>
+        <span class="relevance-badge relevance-high">★ 高相關</span>
+      </div>
+      <p class="card-summary">本研究系統性地探討自閉症光譜障礙（ ASD ）與 aphantasia 之間的關聯性。透過大規模問卷與意象評估，研究發現 ASD 族群中 aphantasia 的盛行率顯著高於一般人口。論文進一步分析了兩者在社會認知、理論心智以及感覺處理特徵上的重疊與差異，指出雖然兩者常伴隨發生，但心盲症並非自閉症的次級症狀，而是可能共享某些神經認知機制（如弱中央統合）的獨立變項。</p>
+      <div class="clinical-box"><strong>臨床意涵：</strong>促使臨床工作者在評估 ASD 時納入意象能力的評估，以更精準地剖析患者的認知優劣勢輪廓，制定個別化介入策略。</div>
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">自閉症光譜障礙個體與神經典型發展者</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">自閉症診斷量表與視覺意象清晰度問卷（ VVIQ ）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">ASD 組內有心盲症與無心盲症者之比較，及與一般對照組之比較</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">ASD 組別中心盲症盛行率顯著較高，且伴隨特定的認知特徵差異</span></div>
+      </div>
+      <div class="card-footer">
+        <a href="https://doi.org/10.1016/j.concog.2026.104085" target="_blank" rel="noopener" class="card-link">查看原文 →</a>
+      </div>
+    </article>
+    <article class="card pick-card" data-pmid="10.1016/j.cortex.2026.04.019">
+      <div class="card-header">
+        <span class="rank-badge">#4</span>
+        <div class="card-title-group">
+          <h3 class="card-title-zh">多模態心理意象輪廓與一般人口中心盲症及超級想像力的盛行率</h3>
+          <p class="card-title-en">Multimodal mental imagery profiles and the prevalence of aphantasia and hyperphantasia in the general population</p>
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="meta-journal">Cortex</span>
+        <span class="meta-date">2026-08</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">心理意象</span><span class="tag">超級想像力</span><span class="tag">社會科學</span>
+        <span class="relevance-badge relevance-high">★ 高相關</span>
+      </div>
+      <p class="card-summary">本研究突破過去僅關注視覺意象的局限，透過大樣本一般人口資料，繪製包含視覺、聽覺、觸覺等多模態的心理意象輪廓。研究精確估計了 aphantasia 與 hyperphantasia （超級想像力）在人口中的盛行率，並發現意象能力的缺失或過度強化往往具有跨模態的一致性，但也存在少數「單一模組缺失」的特殊案例。此研究為意象光譜的分類學提供了具規模性的基礎數據。</p>
+      <div class="clinical-box"><strong>臨床意涵：</strong>為未來建立多模態意象障礙的診斷標準提供流行病學基礎，有助於識別出需要臨床關注的極端意象狀態。</div>
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">具代表性的一般人口大樣本</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">多模態心理意象評估問卷</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同模態間意象能力分數的相關性與集群分析</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">確立多模態意象光譜的分佈狀態，並發布更新版的 aphantasia 與 hyperphantasia 盛行率數據</span></div>
+      </div>
+      <div class="card-footer">
+        <a href="https://doi.org/10.1016/j.cortex.2026.04.019" target="_blank" rel="noopener" class="card-link">查看原文 →</a>
+      </div>
+    </article>
+    <article class="card pick-card" data-pmid="10.1016/j.neuropsychologia.2026.109527">
+      <div class="card-header">
+        <span class="rank-badge">#5</span>
+        <div class="card-title-group">
+          <h3 class="card-title-zh">無心耳症與心盲症：在大型代表性樣本中的盛行率及與人格、幸福感與自我調節的獨立關聯</h3>
+          <p class="card-title-en">Anauralia and aphantasia: Prevalence and distinct associations with personality, well-being and self-regulation in a large, representative sample</p>
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="meta-journal">Neuropsychologia</span>
+        <span class="meta-date">2026-09</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">心理意象</span><span class="tag">社會科學</span><span class="tag">先天性心盲症</span>
+        <span class="relevance-badge relevance-high">★ 高相關</span>
+      </div>
+      <p class="card-summary">本研究聚焦於 anauralia （無法在腦中聽到聲音）與 aphantasia 的比較。利用大型代表性樣本，研究證實兩者雖有部分重疊，但本質上為獨立的現象。心理測量結果顯示， anauralia 與 aphantasia 分別與不同的人格特質（如外向性、開放性）、主觀幸福感及自我調節能力產生特異性的關聯。這排除了「廣泛性意象缺失」為單一構念的可能性，強調感官特異性在心智模擬中的角色。</p>
+      <div class="clinical-box"><strong>臨床意涵：</strong>提示心理諮商與精神醫學評估應區分不同感官維度的意象缺失，因為它們對個體心理健康與自我調節的影響路徑不同。</div>
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">大型代表性社區樣本</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">聽覺與視覺意象量表、人格測驗與幸福感評估</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">anauralia 組、 aphantasia 組、共病組與對照組之間的變項比較</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">兩種意象缺失具備獨立的盛行率，且對應不同的人格與心理健康指標</span></div>
+      </div>
+      <div class="card-footer">
+        <a href="https://doi.org/10.1016/j.neuropsychologia.2026.109527" target="_blank" rel="noopener" class="card-link">查看原文 →</a>
+      </div>
+    </article>
+    <article class="card pick-card" data-pmid="10.1016/j.neuropsychologia.2026.109530">
+      <div class="card-header">
+        <span class="rank-badge">#6</span>
+        <div class="card-title-group">
+          <h3 class="card-title-zh">心盲症個體的運動意象能力</h3>
+          <p class="card-title-en">Motor imagery abilities in individuals who experience aphantasia</p>
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="meta-journal">Neuropsychologia</span>
+        <span class="meta-date">2026-09</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">認知神經科學</span><span class="tag">心理意象</span>
+        <span class="relevance-badge relevance-high">★ 高相關</span>
+      </div>
+      <p class="card-summary">探討 aphantasia 個體在缺乏視覺意象的情況下，是否能透過動覺線索執行 motor imagery （運動意象）。研究透過心理計時任務與肢體旋轉任務發現，部分心盲症個體的運動意象能力相對完好，顯示視覺意象並非運動模擬的必要先決條件。然而，在需要高度依賴視覺-空間整合的複雜運動意象任務中，心盲症個體仍表現出明顯遲緩，揭示了運動意象中視覺與動覺成分的雙軌機制。</p>
+      <div class="clinical-box"><strong>臨床意涵：</strong>對於運動復健與運動心理學具有重要啟示：針對心盲症患者的運動學習，應設計強調動覺回饋而非視覺化引導的介入方案。</div>
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">心盲症個體與匹配對照組</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">心理計時與肢體旋轉等運動意象評估任務</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同任務複雜度下兩組的反應時間與準確率比較</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">心盲症個體在基礎動覺意象保留，但在視覺-空間整合需求高的運動意象任務中表現受損</span></div>
+      </div>
+      <div class="card-footer">
+        <a href="https://doi.org/10.1016/j.neuropsychologia.2026.109530" target="_blank" rel="noopener" class="card-link">查看原文 →</a>
+      </div>
+    </article>
+    <article class="card pick-card" data-pmid="10.1016/j.neuropsychologia.2026.109464">
+      <div class="card-header">
+        <span class="rank-badge">#7</span>
+        <div class="card-title-group">
+          <h3 class="card-title-zh">「在黑暗的窗簾後」：心盲症的生活體驗</h3>
+          <p class="card-title-en">“Behind a dark curtain”: The lived experiences of aphantasia</p>
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="meta-journal">Neuropsychologia</span>
+        <span class="meta-date">2026-07</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">現象學</span><span class="tag">先天性心盲症</span>
+        <span class="relevance-badge relevance-medium">● 中相關</span>
+      </div>
+      <p class="card-summary">採用現象學研究方法，透過深度訪談捕捉 aphantasia 個體的第一人稱生活經驗。受試者生動地將其內在狀態描述為「在黑暗的窗簾後」。研究歸納出幾個核心主題：發現自己與他人不同的驚訝感、在閱讀小說時的獨特代償策略（傾向關注情節而非畫面），以及在人際描述中面臨的挫折。此研究補充了量化數據無法呈現的主觀意識質性面貌。</p>
+      <div class="clinical-box"><strong>臨床意涵：</strong>提升心理衛生教育人員對心盲症主觀困境的理解，避免將其代償行為誤解為注意力不集中或閱讀障礙。</div>
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">以自我報告確認之心盲症成人</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">半結構化深度現象學訪談</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無對照組（質性研究設計）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">提取出「黑暗窗簾」隱喻、代償性語意處理策略與人際溝通挫折等三個現象學核心主題</span></div>
+      </div>
+      <div class="card-footer">
+        <a href="https://doi.org/10.1016/j.neuropsychologia.2026.109464" target="_blank" rel="noopener" class="card-link">查看原文 →</a>
+      </div>
+    </article>
+    <article class="card pick-card" data-pmid="10.1016/j.neuropsychologia.2026.109465">
+      <div class="card-header">
+        <span class="rank-badge">#8</span>
+        <div class="card-title-group">
+          <h3 class="card-title-zh">心盲症作為對休謨式抽象概念的挑戰</h3>
+          <p class="card-title-en">Aphantasia as a challenge for Humean abstraction</p>
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="meta-journal">Neuropsychologia</span>
+        <span class="meta-date">2026-07</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">哲學意識</span><span class="tag">現象學</span>
+        <span class="relevance-badge relevance-medium">● 中相關</span>
+      </div>
+      <p class="card-summary">本文從哲學意識的角度出發，檢視 aphantasia 對休謨認知理論的挑戰。休謨主張所有的抽象概念皆源自於特定心理意象的「提純」與疊加。然而，心盲症個體在完全缺乏心理意象的情況下，依然能夠完美理解與運用抽象概念（如幾何學、哲學範疇）。此論文論證了心盲症作為自然實驗的案例，直接推翻了以意象為基礎的抽象認知理論，支持認知結構可獨立於感官意象運作的論點。</p>
+      <div class="clinical-box"><strong>臨床意涵：</strong>雖非直接臨床應用，但影響了對「認知功能正常與否」的哲學定義，有助於去除將「缺乏意象」病理化的偏見。</div>
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">哲學理論論證（以 aphantasia 作為自然實驗案例）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">概念分析與思想實驗</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">休謨的意象依賴型抽象論 vs. 當代非意象依賴認知架構</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">證明 aphantasia 個體的抽象能力構成了對休謨式抽象化機制的決定性反例</span></div>
+      </div>
+      <div class="card-footer">
+        <a href="https://doi.org/10.1016/j.neuropsychologia.2026.109465" target="_blank" rel="noopener" class="card-link">查看原文 →</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">主題分佈</h2>
+    <div class="topic-dist-box">
+      
+      <div class="topic-bar-row">
+        <span class="topic-bar-label">認知神經科學</span>
+        <div class="topic-bar-track">
+          <div class="topic-bar-fill" style="width:100%"></div>
+        </div>
+        <span class="topic-bar-count">4</span>
+      </div>
+      <div class="topic-bar-row">
+        <span class="topic-bar-label">心理意象</span>
+        <div class="topic-bar-track">
+          <div class="topic-bar-fill" style="width:100%"></div>
+        </div>
+        <span class="topic-bar-count">4</span>
+      </div>
+      <div class="topic-bar-row">
+        <span class="topic-bar-label">社會科學</span>
+        <div class="topic-bar-track">
+          <div class="topic-bar-fill" style="width:50%"></div>
+        </div>
+        <span class="topic-bar-count">2</span>
+      </div>
+      <div class="topic-bar-row">
+        <span class="topic-bar-label">先天性心盲症</span>
+        <div class="topic-bar-track">
+          <div class="topic-bar-fill" style="width:50%"></div>
+        </div>
+        <span class="topic-bar-count">2</span>
+      </div>
+      <div class="topic-bar-row">
+        <span class="topic-bar-label">現象學</span>
+        <div class="topic-bar-track">
+          <div class="topic-bar-fill" style="width:50%"></div>
+        </div>
+        <span class="topic-bar-count">2</span>
+      </div>
+      <div class="topic-bar-row">
+        <span class="topic-bar-label">臉孔辨識</span>
+        <div class="topic-bar-track">
+          <div class="topic-bar-fill" style="width:25%"></div>
+        </div>
+        <span class="topic-bar-count">1</span>
+      </div>
+      <div class="topic-bar-row">
+        <span class="topic-bar-label">自閉症</span>
+        <div class="topic-bar-track">
+          <div class="topic-bar-fill" style="width:25%"></div>
+        </div>
+        <span class="topic-bar-count">1</span>
+      </div>
+      <div class="topic-bar-row">
+        <span class="topic-bar-label">發展心理學</span>
+        <div class="topic-bar-track">
+          <div class="topic-bar-fill" style="width:25%"></div>
+        </div>
+        <span class="topic-bar-count">1</span>
+      </div>
+      <div class="topic-bar-row">
+        <span class="topic-bar-label">精神醫學</span>
+        <div class="topic-bar-track">
+          <div class="topic-bar-fill" style="width:25%"></div>
+        </div>
+        <span class="topic-bar-count">1</span>
+      </div>
+      <div class="topic-bar-row">
+        <span class="topic-bar-label">超級想像力</span>
+        <div class="topic-bar-track">
+          <div class="topic-bar-fill" style="width:25%"></div>
+        </div>
+        <span class="topic-bar-count">1</span>
+      </div>
+      <div class="topic-bar-row">
+        <span class="topic-bar-label">哲學意識</span>
+        <div class="topic-bar-track">
+          <div class="topic-bar-fill" style="width:25%"></div>
+        </div>
+        <span class="topic-bar-count">1</span>
+      </div>
+      <div class="keyword-cloud"><span class="keyword-badge">aphantasia</span><span class="keyword-badge">motor imagery</span><span class="keyword-badge">face perception</span><span class="keyword-badge">spatial navigation</span><span class="keyword-badge">anauralia</span><span class="keyword-badge">autism spectrum</span><span class="keyword-badge">hyperphantasia</span><span class="keyword-badge">phenomenology</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">所有文獻</h2>
+    <table class="paper-table">
+      <tbody>
+    <tr class="paper-row">
+      <td class="paper-title-cell">
+        <a href="https://doi.org/10.1016/j.neuropsychologia.2026.109443" target="_blank" rel="noopener" class="paper-link">探討心盲症在句子理解過程中的心理模擬</a>
+        <div class="paper-meta-inline">
+          <span>Neuropsychologia</span>
+          <span class="mini-tag">認知神經科學</span><span class="mini-tag">心理意象</span>
+        </div>
+      </td>
+      <td class="paper-summary-cell">測試心盲症個體在閱讀具空間或視覺隱含意義的句子時，是否仍會啟動心理模擬。結果顯示其依賴語意而非感知模擬來理解句子。</td>
+      <td class="paper-rel-cell">
+        <span class="relevance-badge relevance-medium">●</span>
+      </td>
+    </tr></tbody>
+    </table>
+  </section>
+
+  <footer class="page-footer">
+    <p>由 AI 自動生成｜資料來源：PubMed、Crossref</p>
+    <div class="footer-links">
+      <a href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">李政洋身心診所首頁</a>
+      <a href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">訂閱電子報</a>
+      <a href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">Buy me a coffee ☕</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
